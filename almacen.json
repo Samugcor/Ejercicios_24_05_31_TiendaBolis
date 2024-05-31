@@ -1,0 +1,37 @@
+[
+    {
+    "marca": "Bic", 
+    "capacidad": 30, 
+    "contenido": 18, 
+    "color": "azul", 
+    "fabricacion": "2022-05-12T12:00:00.000Z" 
+    },
+    {
+        "marca": "Milan", 
+        "capacidad": 60, 
+        "contenido": 10, 
+        "color": "negro", 
+        "fabricacion": "2022-05-12T12:00:00.000Z" 
+    },
+    {
+        "marca": "Pilot", 
+        "capacidad": 35, 
+        "contenido": 20, 
+        "color": "azul", 
+        "fabricacion": "2022-05-12T12:00:00.000Z" 
+    },
+    {
+        "marca": "Bic", 
+        "capacidad": 30, 
+        "contenido": 15, 
+        "color": "negro", 
+        "fabricacion": "2022-05-12T12:00:00.000Z" 
+    },
+    {
+        "marca": "BPilot", 
+        "capacidad": 20, 
+        "contenido": 18, 
+        "color": "rojo", 
+        "fabricacion": "2022-05-12T12:00:00.000Z" 
+    }
+]
