@@ -39,4 +39,54 @@ function ordenarmM(arr) {
 
     return [...ordenarmM(leftArr), arr[0], ...ordenarmM(rightArr)];
 }
-module.exports={abrirParsedJSON, guardarJSON, ordenarmM}
+
+function printObj(cabecero, obj, list,indent){
+
+    let str=JSON.stringify(obj);
+    //str=str.replace(/[}"]/g, '').replace(/[{,]/g, '\n\t- ').replace(/:/g, ': ');
+    if (cabecero){
+        console.log(cabecero);
+    }
+
+    if(list){
+        str=str.replace(/[}"]/g, '').replace(/{/g, (' '.repeat(indent)+'- ')).replace(/,/g, ('\n'+' '.repeat(indent)+'- ')).replace(/:/g, ': ');
+    }
+    else{
+        str=str.replace(/[{}"]/g, '').replace(/,/g, ', ').replace(/:/g, ': ');
+    }
+    console.log(str)
+}
+
+function printObjArrObj(encabezado,objarrobj,elemento, list){
+    let i;
+    if (encabezado) {
+        console.log(encabezado)
+    }
+    if (list) {
+        //Entramos en el ojeto y utilizaos las keys como titulo de cada parte
+        for (const key in objarrobj) {
+            console.log("\n   "+ key + ": ")
+            i=0
+            //Recorremos cada objeto dentro del array
+            for (const caja of objarrobj[key]) {
+                i++
+                printObj(`\n\t${elemento} ${i}: `, caja, true)
+            } 
+        }
+    }
+    else{
+        //Entramos en el ojeto y utilizaos las keys como titulo de cada parte
+        for (const key in objarrobj) {
+            console.log("\n"+ key + ": ")
+            i=0
+            //Recorremos cada objeto dentro del array
+            for (const caja of objarrobj[key]) {
+                i++
+                printObj(`\n${elemento} ${i}: `, caja, null)
+            } 
+        }
+    }
+    
+
+}
+module.exports={abrirParsedJSON, guardarJSON, ordenarmM, printObj, printObjArrObj}
